@@ -1,0 +1,15 @@
+---
+import Config from "../blog.config.cjs";
+import Nav from "../components/Nav.astro";
+
+import "../styles/base.css";
+---
+
+<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+  <div class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+    <div class="pb-4">
+        <h1>{Config.siteTitle}</h1>
+    </div>
+    <Nav />
+  </div>
+</header>

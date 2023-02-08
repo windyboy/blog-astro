@@ -1,15 +1,30 @@
 ---
 const { content } = Astro.props;
+import Config from '../blog.config.cjs';
+import "../styles/base.css";
+
+import Header from "../components/Header.astro";
+import Aside from "../components/Aside.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{content.title}</title>
+  </head>
+  <body class="bg-gray-100 text-gray-700 font-sans">
+
+    <div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+      <Header />
+      <main class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+        <slot />
+      </main>
+      <div class="w-full h-0 flex-none order-3"></div>
+      <Aside />
+      <footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+      </footer>
+    </div>
+  </body>
 </html>
